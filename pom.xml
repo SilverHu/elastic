@@ -13,17 +13,21 @@
 
 	<!-- 依赖定义 -->
 	<dependencies>
-		<!-- spring boot -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
-
 		<!-- elasticsearch -->
 		<dependency>
 			<groupId>org.elasticsearch</groupId>
 			<artifactId>elasticsearch</artifactId>
 			<version>1.7.2</version>
+		</dependency>
+		
+		<!-- spring boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>
 	</dependencies>
 
@@ -42,5 +46,27 @@
 				<maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
 			</properties>
 		</profile>
+
+		<!-- 设置数据库 -->
+		<profile>
+			<id>dev</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<jdbc.driver>org.gjt.mm.mysql.Driver</jdbc.driver>
+				<jdbc.url>jdbc:mysql://localhost:3306/elastic</jdbc.url>
+				<connectionProperties>useUnicode=true;characterEncoding=UTF-8</connectionProperties>
+				<jdbc.username>root</jdbc.username>
+				<jdbc.password>123456</jdbc.password>
+				<jdbc.pool.maxActive>50</jdbc.pool.maxActive>
+				<jdbc.pool.maxIdle>10</jdbc.pool.maxIdle>
+				<defaultAutoCommit>true</defaultAutoCommit>
+				<!-- 连接Idle半个小时后超时，每15分钟检查一次 -->
+				<timeBetweenEvictionRunsMillis>900000</timeBetweenEvictionRunsMillis>
+				<minEvictableIdleTimeMillis>1800000</minEvictableIdleTimeMillis>
+			</properties>
+		</profile>
+
 	</profiles>
 </project>
