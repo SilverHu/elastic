@@ -24,7 +24,7 @@ public class Cinema {
 	@Field(type = FieldType.String)
 	private String address; // 影院地址
 	@GeoPointField
-	private GeoPoint point; // 影院坐标
+	private GeoPoint point = new GeoPoint(); // 影院坐标
 
 	/**
 	 * 影院id

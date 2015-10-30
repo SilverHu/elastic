@@ -19,7 +19,7 @@
 			<artifactId>elasticsearch</artifactId>
 			<version>1.7.2</version>
 		</dependency>
-		
+
 		<!-- spring boot -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -29,10 +29,14 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
 		</dependency>
+
+		<!-- jsp -->
+
 	</dependencies>
 
 	<!-- 属性定义 -->
 	<profiles>
+
 		<!-- 设置项目使用jdk默认版本 -->
 		<profile>
 			<id>jdk-1.7</id>
