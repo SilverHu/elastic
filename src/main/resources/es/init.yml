@@ -1,0 +1,28 @@
+#创建索引
+curl -XPUT http://localhost:9200/sys_user -d'
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 5, 
+            "number_of_replicas" : 1 
+        }
+    }
+}'
+curl -XPUT http://localhost:9200/sys_role -d'
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 5, 
+            "number_of_replicas" : 1 
+        }
+    }
+}'
+curl -XPUT http://localhost:9200/sys_permission -d'
+{
+    "settings" : {
+        "index" : {
+            "number_of_shards" : 5, 
+            "number_of_replicas" : 1 
+        }
+    }
+}'
