@@ -23,24 +23,24 @@ import org.springframework.boot.orm.jpa.EntityManagerFactoryBuilder;
 @EnableTransactionManagement
 public class DataSourceConfig {
 
-	private Logger log = LoggerFactory.getLogger(DataSourceConfig.class);
-	
-	@Bean("mysqlDataSource")
-	@Qualifier("mysqlDataSource")
-	@ConfigurationProperties(prefix="spring.datasource")
-	public DataSource mysqlDataSource() {
-		DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
-		return dataSource;
-	}
-	
-	@Bean(name = "mysqlEntityManagerFactory")
-    public LocalContainerEntityManagerFactoryBean mssqlEntityManagerFactory(
-            EntityManagerFactoryBuilder builder) {
-        return em;
-    }
-	
-	@Bean(name = "esEntityManagerFactory")
-	public EntityManagerFactory esManagerFactory() {
-    // …
-	}
+//	private Logger log = LoggerFactory.getLogger(DataSourceConfig.class);
+//	
+//	@Bean("mysqlDataSource")
+//	@Qualifier("mysqlDataSource")
+//	@ConfigurationProperties(prefix="spring.datasource")
+//	public DataSource mysqlDataSource() {
+//		DataSource dataSource = new org.apache.tomcat.jdbc.pool.DataSource();
+//		return dataSource;
+//	}
+//	
+//	@Bean(name = "mysqlEntityManagerFactory")
+//    public LocalContainerEntityManagerFactoryBean mssqlEntityManagerFactory(
+//            EntityManagerFactoryBuilder builder) {
+//        return em;
+//    }
+//	
+//	@Bean(name = "esEntityManagerFactory")
+//	public EntityManagerFactory esManagerFactory() {
+//    // …
+//	}
 }
