@@ -3,7 +3,7 @@ package com.elastic.entity.es;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "sys_permission")
+@Document(indexName = "sys_permission", replicas = 0)
 public class EsSysPermission {
     private Long id;// 资源id
     private String name;// 资源名称

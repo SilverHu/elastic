@@ -20,8 +20,8 @@ spring:
     url: ${spring.datasource.url}
     username: ${spring.datasource.username}
     password: ${spring.datasource.password}
-    driver-class-name: ${spring.datasource.driver-class-name}
-    type: ${spring.datasource.type}
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
     hikari:
       minimum-idle: 5
       maximum-pool-size: 50

@@ -2,7 +2,7 @@ package com.elastic.entity.es;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 
-@Document(indexName = "sys_role")
+@Document(indexName = "sys_role", replicas = 0)
 public class EsSysRole {
 
     private Long id;// 角色id

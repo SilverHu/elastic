@@ -5,11 +5,10 @@ import org.springframework.data.elasticsearch.annotations.Document;
 
 /**
  * 系统用户
- * 
- * @author SilverHu
  *
+ * @author SilverHu
  */
-@Document(indexName = "sys_user")
+@Document(indexName = "sys_user", replicas = 0)
 public class EsSysUser {
 
     private Long id;// 用户id
@@ -45,10 +44,6 @@ public class EsSysUser {
 
     public String getPassword() {
         return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getEmail() {
