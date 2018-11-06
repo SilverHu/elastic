@@ -1,0 +1,26 @@
+{
+    "sys_user": {
+        "settings": {
+            "index": {
+                "number_of_shards": 5,
+                "number_of_replicas": 1
+            }
+        }
+    },
+    "sys_role": {
+        "settings": {
+            "index": {
+                "number_of_shards": 5,
+                "number_of_replicas": 1
+            }
+        }
+    },
+    "sys_permission": {
+        "settings": {
+            "index": {
+                "number_of_shards": 5,
+                "number_of_replicas": 1
+            }
+        }
+    }
+}

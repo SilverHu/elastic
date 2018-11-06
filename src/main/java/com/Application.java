@@ -11,15 +11,15 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
 //@EnableJpaRepositories(basePackages = "com.elastic.repository.mysql")
 @EnableElasticsearchRepositories(basePackages = "com.elastic.repository.es")
 public class Application {
-	private static Logger log = LoggerFactory.getLogger(Application.class);
-	
-	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
-		String[] profiles = context.getEnvironment().getActiveProfiles();
-		if (profiles != null) {
-			for (String profile : profiles) {
-				log.debug("------------start with profile : " + profile);
-			}
-		}
-	}
+    private static Logger log = LoggerFactory.getLogger(Application.class);
+    
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+        String[] profiles = context.getEnvironment().getActiveProfiles();
+        if (profiles != null) {
+            for (String profile : profiles) {
+                log.debug("------------start with profile : " + profile);
+            }
+        }
+    }
 }

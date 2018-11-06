@@ -4,6 +4,6 @@ import com.elastic.entity.es.EsSysUser;
 
 public interface EsSysUserDao extends EsBaseRepository<EsSysUser, Long> {
 
-	EsSysUser findByUsername(String user);
+    EsSysUser findByUsername(String user);
 
 }

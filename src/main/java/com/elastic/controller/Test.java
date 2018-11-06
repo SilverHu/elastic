@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class Test {
-	
-	@RequestMapping("/index")
-	@ResponseBody
-	public Object index(){
-		return "hello world!";
-	}
+    
+    @RequestMapping("/index")
+    @ResponseBody
+    public Object index(){
+        return "hello world!";
+    }
 }

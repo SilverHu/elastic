@@ -1,0 +1,62 @@
+mybatis:
+  mapper-locations: classpath:mybatis/**/*.xml
+  configuration: 
+    #开启驼峰命名规则
+    map-underscore-to-camel-case: true
+    #一次读取100条数据
+    default-fetch-size: 100
+    #sql超时时间，单位：秒
+    default-statement-timeout: 30
+
+spring:
+  jmx: 
+    enabled: false
+    
+  jackson: 
+    time-zone: GMT+8
+    
+  #jdbc配置
+  datasource:
+    url: ${spring.datasource.url}
+    username: ${spring.datasource.username}
+    password: ${spring.datasource.password}
+    driver-class-name: ${spring.datasource.driver-class-name}
+    type: ${spring.datasource.type}
+    hikari:
+      minimum-idle: 5
+      maximum-pool-size: 50
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: DatebookHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+      
+  #es数据源配置
+  data:
+    elasticsearch: 
+      cluster-name: ${cluster.name}
+      cluster-nodes: ${cluster.nodes}
+      repositories:
+        enabled: true
+
+  #http编码
+  http:
+    encoding:
+      force: true
+      enabled: true
+      charset: UTF-8
+
+  banner:
+      charset: utf-8
+
+#springboot server编码格式
+server:
+  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+
+
+
+
+
