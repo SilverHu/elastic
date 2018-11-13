@@ -1,3 +1,7 @@
+elastic:
+  index:
+    suffix: pdf
+
 mybatis:
   mapper-locations: classpath:mybatis/**/*.xml
   configuration: 

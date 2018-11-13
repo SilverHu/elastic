@@ -8,7 +8,6 @@
     <properties>
         <jdk.version>1.8</jdk.version>
         <mysql.version>5.1.24</mysql.version>
-        <tomcat-jdbc.version>8.0.24</tomcat-jdbc.version>
         <spring.version>5.0.5.RELEASE</spring.version>
         <poi.version>3.17</poi.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -28,6 +27,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
+        </dependency>
         
           <!-- spring data jpa -->
         <dependency>
@@ -39,11 +42,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-jdbc</artifactId>
-            <scope>runtime</scope>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
         </dependency>
-        
+
         <!-- spring data elasticsearch -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -133,29 +135,10 @@
             <version>1.2.47</version>
         </dependency>
         
-        <!-- 日志logback and slf4j -->
+        <!-- lombok注解 -->
         <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-        </dependency>
-        <!-- log4j桥接，用来输出 JAR包中log4j Logging (log4j) -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-        </dependency>
-        <!--jul桥接 用来输出 Java Logging Framework (JUL) -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jul-to-slf4j</artifactId>
-        </dependency>
-        <!-- jcl桥接，用来输出 第三方Jakarta Commons Logging (JCL) -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>jcl-over-slf4j</artifactId>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
     
@@ -187,7 +170,7 @@
                     <version>2.4</version>
                     <configuration>
                         <warName>${project.artifactId}</warName>
-                        <failOnMissingWebXml>false</failOnMissingWebXml> 
+                        <failOnMissingWebXml>false</failOnMissingWebXml>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -198,7 +181,7 @@
                     </configuration>
                     <version>2.6</version>
                 </plugin>
-                
+
                 <!-- 设置项目使用jdk默认版本 -->
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -209,6 +192,12 @@
                         <target>${jdk.version}</target>
                         <showWarnings>true</showWarnings>
                     </configuration>
+                </plugin>
+
+                <plugin>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok-maven-plugin</artifactId>
+                    <version>1.16.6.1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
